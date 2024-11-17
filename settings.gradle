@@ -1,0 +1,10 @@
+rootProject.name = 'computer-fundamentals'
+include 'ds'
+include 'algorithm'
+include 'oop'
+include 'architecture'
+include 'design-patterns'
+include 'refactoring'
+include 'database'
+include 'os'
+
