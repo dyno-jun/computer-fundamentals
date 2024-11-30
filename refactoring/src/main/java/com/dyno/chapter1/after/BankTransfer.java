@@ -1,4 +1,4 @@
-package com.dyno.chapter1;
+package com.dyno.chapter1.after;
 
 interface FeeCalculator {
   double calculateFee(double amount);
