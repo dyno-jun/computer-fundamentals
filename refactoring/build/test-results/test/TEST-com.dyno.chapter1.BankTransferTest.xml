@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dyno.chapter1.BankTransferTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-11-30T05:24:51" hostname="sagwangjin-ui-MacBookPro-2.local" time="0.103">
+  <properties/>
+  <testcase name="testTransferAmountBetween5000And10000()" classname="com.dyno.chapter1.BankTransferTest" time="0.088"/>
+  <testcase name="testTransferAmountLessThan5000()" classname="com.dyno.chapter1.BankTransferTest" time="0.003"/>
+  <testcase name="testTransferAmountGreaterThan10000()" classname="com.dyno.chapter1.BankTransferTest" time="0.001"/>
+  <testcase name="testNegativeAmountTransfer()" classname="com.dyno.chapter1.BankTransferTest" time="0.003"/>
+  <testcase name="testZeroAmountTransfer()" classname="com.dyno.chapter1.BankTransferTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
