@@ -1,4 +1,4 @@
-package com.dyno.chapter6;
+package com.dyno.chapter6.second;
 
 // 1. 함수를 새로 만들고 목적을 잘드러내는 이름을 붙인다. (어떻게 가아닌 무엇을 하는지 의도가 드러나야한다.
 // 2. 추출할 코드를 원본 함수에서 복사하여 새 함수에 붙여넣는다.
@@ -26,9 +26,9 @@ public class ExtractFunction {
 
   // After:
   // 1. 함수를 새로 만들고 목적을 잘 드러내는 이름을 붙인다.
-//  public void generateInvoice(EFOrder order) {
-//    printInvoiceDetails(order); // 추출한 함수 호출
-//  }
+  //  public void generateInvoice(EFOrder order) {
+  //    printInvoiceDetails(order); // 추출한 함수 호출
+  //  }
 
   // 2. 추출할 코드를 원본 함수에서 복사하여 새 함수에 붙여넣는다.
   private void printInvoiceDetails(EFOrder order) {
@@ -71,9 +71,9 @@ public class ExtractFunction {
 
 // Order 클래스 정의 (도우미 클래스)
 class EFOrder {
-  private String itemName;
-  private int quantity;
-  private double itemPrice;
+  private final String itemName;
+  private final int quantity;
+  private final double itemPrice;
 
   public EFOrder(String itemName, int quantity, double itemPrice) {
     this.itemName = itemName;

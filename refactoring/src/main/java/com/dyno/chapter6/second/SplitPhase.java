@@ -1,5 +1,4 @@
-package com.dyno.chapter6;
-
+package com.dyno.chapter6.second;
 
 // 1. 두번째 단계에 해당하는 코드를 독립 함수로 추출한다.
 // 2. 테스트한다.
@@ -31,18 +30,9 @@ public class SplitPhase {
     double finalPrice = basePrice - discount;
     System.out.println("총 금액: " + finalPrice);
   }
+
   // 2. 테스트한다.
   // - 이 시점에서 프로세스가 기존과 동일하게 작동하는지 테스트합니다.
-
-  // 3. 중간 데이터 구조를 만들어서 앞에서 추출한 함수의 인수로 추가한다.
-  static class PricingData {
-    double basePrice;
-    double discount;
-
-    public PricingData(double basePrice) {
-      this.basePrice = basePrice;
-    }
-  }
 
   private double calculateDiscount(PricingData pricingData) {
     pricingData.discount = (pricingData.basePrice > 1000) ? pricingData.basePrice * 0.1 : 0;
@@ -56,8 +46,6 @@ public class SplitPhase {
     double finalPrice = pricingData.basePrice - pricingData.discount;
     System.out.println("총 금액: " + finalPrice);
   }
-  // 4. 테스트한다.
-  // - 중간 데이터 구조가 제대로 작동하는지 테스트합니다.
 
   // 5. 추출한 두번째 단계 함수의 매개변수를 하나씩 검토한다.
   //    그중 첫번째 단계에서 사용되는 중간 데이터 구조로 옮긴다.
@@ -66,14 +54,15 @@ public class SplitPhase {
     return new PricingData(basePrice);
   }
 
+  // 4. 테스트한다.
+  // - 중간 데이터 구조가 제대로 작동하는지 테스트합니다.
+
   public void processOrderStep3(Order order) {
     PricingData pricingData = calculateBasePrice(order); // 중간 데이터 구조 반환
     calculateDiscount(pricingData);
     double finalPrice = pricingData.basePrice - pricingData.discount;
     System.out.println("총 금액: " + finalPrice);
   }
-  // 6. 첫번째 단계 코드를 함수로 추출하면서 중간 데이터 구조를 반환 하도록 만든다.
-  // - 최종 단계에서는 각 단계를 명확히 분리합니다.
 
   public void processOrderFinal(Order order) {
     PricingData pricingData = calculateBasePrice(order);
@@ -82,6 +71,9 @@ public class SplitPhase {
     printFinalPrice(finalPrice);
   }
 
+  // 6. 첫번째 단계 코드를 함수로 추출하면서 중간 데이터 구조를 반환 하도록 만든다.
+  // - 최종 단계에서는 각 단계를 명확히 분리합니다.
+
   private double calculateFinalPrice(PricingData pricingData) {
     return pricingData.basePrice - pricingData.discount;
   }
@@ -89,12 +81,22 @@ public class SplitPhase {
   private void printFinalPrice(double finalPrice) {
     System.out.println("총 금액: " + finalPrice);
   }
+
+  // 3. 중간 데이터 구조를 만들어서 앞에서 추출한 함수의 인수로 추가한다.
+  static class PricingData {
+    double basePrice;
+    double discount;
+
+    public PricingData(double basePrice) {
+      this.basePrice = basePrice;
+    }
+  }
 }
 
 // Order 클래스 정의 (도우미 클래스)
 class Order {
-  private int quantity;
-  private double itemPrice;
+  private final int quantity;
+  private final double itemPrice;
 
   public Order(int quantity, double itemPrice) {
     this.quantity = quantity;

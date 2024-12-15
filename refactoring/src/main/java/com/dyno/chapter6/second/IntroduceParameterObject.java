@@ -1,4 +1,4 @@
-package com.dyno.chapter6;
+package com.dyno.chapter6.second;
 
 // 1. 적당한 데이터 구조가 아직 마련되어 있지 않다면 새로 만든다.
 // 2. 테스트 한다.
@@ -20,6 +20,14 @@ public class IntroduceParameterObject {
   // 1. 적당한 데이터 구조가 아직 마련되어 있지 않다면 새로 만든다.
   // - `Point` 클래스 추가 (start와 end를 포괄하는 데이터 구조).
 
+  // 3. 함수 선언 바꾸기로 새 데이터 구조를 매개변수로 추가한다.
+  public double calculateDistance(LineSegment segment) {
+    // 6. 기존 매개변수를 사용하던 코드를 새 데이터 구조의 원소로 사용하도록 바꾼다.
+    return Math.sqrt(
+        Math.pow(segment.end.x - segment.start.x, 2)
+            + Math.pow(segment.end.y - segment.start.y, 2));
+  }
+
   public static class Point {
     public double x;
     public double y;
@@ -30,6 +38,9 @@ public class IntroduceParameterObject {
     }
   }
 
+  // 2. 테스트 한다.
+  // - Point와 LineSegment를 올바르게 생성하는지 테스트.
+
   public static class LineSegment {
     public Point start;
     public Point end;
@@ -38,15 +49,6 @@ public class IntroduceParameterObject {
       this.start = start;
       this.end = end;
     }
-  }
-
-  // 2. 테스트 한다.
-  // - Point와 LineSegment를 올바르게 생성하는지 테스트.
-
-  // 3. 함수 선언 바꾸기로 새 데이터 구조를 매개변수로 추가한다.
-  public double calculateDistance(LineSegment segment) {
-    // 6. 기존 매개변수를 사용하던 코드를 새 데이터 구조의 원소로 사용하도록 바꾼다.
-    return Math.sqrt(Math.pow(segment.end.x - segment.start.x, 2) + Math.pow(segment.end.y - segment.start.y, 2));
   }
 
   // 7. 다 바꿨다면 기존 매개변수를 제거하고 테스트한다.

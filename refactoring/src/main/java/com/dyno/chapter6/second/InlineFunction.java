@@ -1,4 +1,4 @@
-package com.dyno.chapter6;
+package com.dyno.chapter6.second;
 
 // 1. 다형 메서드인지 확인한다.
 // 2. 인라인할 함수를 호출하는 곳을 모두 찾는다.
