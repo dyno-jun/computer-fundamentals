@@ -1,4 +1,4 @@
-package com.dyno.arraystrings;
+package com.dyno.arraystrings.towpointers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,5 +81,11 @@ public class TwoPointers {
     }
 
     return i == s.length();
+  }
+
+  public void bubbleSort(int[] nums) {
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums.length - 1 - i; j++) {}
+    }
   }
 }
