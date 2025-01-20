@@ -6,7 +6,6 @@ import java.util.Map;
 public class Counting {
   public static void main(String[] args) {
     String sentence = "eceba";
-
     int result = new Counting().findLongestSubstring(sentence, 2);
     System.out.println(result);
   }
