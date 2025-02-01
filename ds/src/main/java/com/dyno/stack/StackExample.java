@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Stack;
 
 class StackExample {
+
+
   public boolean isValid(String s) {
     Map<Character, Character> matching = new HashMap<>();
     matching.put('(', ')');
@@ -13,7 +15,7 @@ class StackExample {
 
     Stack<Character> stack = new Stack<>();
     for (char c : s.toCharArray()) {
-      if (matching.containsKey(c)) { // if c is an opening bracket
+      if (matching.containsKey(c)) {
         stack.push(c);
       } else {
         if (stack.empty()) {
