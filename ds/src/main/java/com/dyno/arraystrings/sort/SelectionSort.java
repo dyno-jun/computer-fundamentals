@@ -1,6 +1,7 @@
 package com.dyno.arraystrings.sort;
 
 public class SelectionSort {
+
   public static void selectionSort(int[] arr) {
     int n = arr.length;
     for (int i = 0; i < n - 1; i++) {
@@ -22,6 +23,23 @@ public class SelectionSort {
     selectionSort(arr);
     for (int num : arr) {
       System.out.print(num + " ");
+    }
+  }
+
+  public void selection(int[] arr) {
+    int size = arr.length;
+
+    for (int i = 0; i < size - 1; i++) {
+      int minIdx = i;
+      for (int j = i + 1; j < size; j++) {
+        if (arr[j] < arr[minIdx]) {
+          minIdx = j;
+        }
+      }
+
+      int temp = arr[minIdx];
+      arr[minIdx] = arr[i];
+      arr[i] = temp;
     }
   }
 }

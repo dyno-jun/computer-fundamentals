@@ -23,6 +23,7 @@ public class MaximumAverageSubarray {
 
   public double findMaxAverage(int[] nums, int k) {
     int curr = 0;
+    // 초기 합
     for (int i = 0; i < k; i++) {
       curr += nums[i];
     }

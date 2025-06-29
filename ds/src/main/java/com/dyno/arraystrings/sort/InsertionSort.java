@@ -1,6 +1,7 @@
 package com.dyno.arraystrings.sort;
 
 public class InsertionSort {
+
   public static void insertionSort(int[] arr) {
     int n = arr.length;
     for (int i = 1; i < n; i++) {
