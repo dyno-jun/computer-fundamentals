@@ -22,6 +22,7 @@ public class HowManyApple {
     int result = 0;
     int baketWeight = 5000;
     Arrays.sort(weights);
+
     for (int weight : weights) {
       baketWeight -= weight;
       if (baketWeight >= 0) {
